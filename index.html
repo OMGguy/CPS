@@ -24,33 +24,29 @@
  <h1>Clicks Per Second Tester</h1>
  <p id="mainpara">Click the Button as fast as you can!</p>
  <button type="submit">CLICK ME!</button>
- <p id="score">0</p>
- <p id="persecond">0.00</p>
+ <p id="Clik">0</p>
+ <p id="CPS">0.00</p>
  </body>
  <script>
-document.onclick = () => applyCursorRippleEffect(event);
+ var cps = document.getElementById("cps");
+var clicks = document.getElementById("clicks");
+var count = 0;
+var numSec = 1;
+var start = 0;
+window.addEventListener("click", function() {
+  count++;
+  start++;
+  Clik.innerHTML = start;
+});
 
-function applyCursorRippleEffect(e) {
-   const ripple = document.createElement("div");
-  
-   ripple.className = "ripple";
-   document.body.appendChild(ripple);
+getCPS();
 
-  ripple.style.left = `${e.clientX}px`;
-  ripple.style.top = `${e.clientY}px`; 
-   ripple.style.animation = `ripple-effect .4s  linear`;
-   ripple.onanimationend = () => {
-     document.body.removeChild(ripple);
-     
-   }
-  
-}
-
-// extra and optional part:
-
-const all = document.body.getElementsByTagName("*");
-for (var i = 0;  i < all.length; ++i) {
-  all[i].onclick = (event) => event.stopPropagation();
+function getCPS() {
+  setTimeout(function() {
+    CPS.innerHTML = count;
+    count = 0;
+    getCPS();
+  }, numSec*1000);
 }
  </script> 
  </html>
