@@ -76,87 +76,11 @@
             });
 
             function timer() {
-                if(($.now() - start) > 5000){
-                    $('#clicker').hide();
-                    $('.countdown').hide();
-                    $('#countdown').html('');
-                    $('#reset').show();
+                if(($.now() - start) > 10000){
                     $('#clicks').html((clicks / 5) + ' CPS');
                     active = false;
                     clearInterval(countdown);
-                    document.getElementById("clicker").innerHTML = 'Click Here to start playing';
-                      var score=clicks/5;
-                      if (score > 0 && score <= 5){
-                            $('#speedModal').modal('show');
-                            $("#speedModal div:first").addClass('modal-turtle');
-                            $("#speedModal div:first").removeClass('modal-cheetah');
-                            $("#speedModal div:first").removeClass('modal-octopus');
-                            $("#speedModal div:first").removeClass('modal-rabbit');
-
-                            $("#main-img").attr('src','images/turtle.png');
-                            $('#ani-name').text('Turtle!');
-                            $('#cen-text').text('“Snap those fingers, You lazy ass”');
-                            $('.cscore').text(score);
-                            $('.times').text(clicks+' Clicks in 5 Seconds');
-                            $('.image-row .col-md-12').html("<a href=''> <img src='images/rabbit.png' alt=''><a href=''> <img src='images/octo.png' alt=''><a href=''> <img src='images/tiger-1.png' alt=''>");
-                            
-                        }
-                        else if(score > 5 && score <= 8){
-                            $('#speedModal').modal('show');
-                            $("#speedModal div:first").addClass('modal-octopus');
-                            $("#speedModal div:first").removeClass('modal-cheetah');
-                            $("#speedModal div:first").removeClass('modal-rabbit');
-                            $("#speedModal div:first").removeClass('modal-turtle');
-                            $("#main-img").attr('src','images/octo.png');
-                            $('#ani-name').text('Octopus!');
-                            $('#cen-text').text('“Smart but not fast, flicker your finger even faster.”');
-                            $('.cscore').text(score);
-                            $('.times').text(clicks+' Clicks in 5 Seconds');
-                            $('.image-row .col-md-12').html("<a href=''> <img src='images/rabbit.png' alt=''><a href=''> <img src='images/tiger-1.png' alt=''>");
-                            
-                        }
-                        else if(score > 8 && score <= 10){
-                            $('#speedModal').modal('show');
-                            $("#speedModal div:first").addClass('modal-rabbit');
-                            $("#speedModal div:first").removeClass('modal-cheetah');
-                            $("#speedModal div:first").removeClass('modal-turtle');
-                            $("#speedModal div:first").removeClass('modal-octopus');
-                            $("#main-img").attr('src','images/rabbit.png');
-                            $('#ani-name').text('Rabbit!');
-                            $('#cen-text').text('“Time to go full throttle, you are not far from being the best.”');
-                            $('.cscore').text(score);
-                            $('.times').text(clicks+' Clicks in 5 Seconds');
-                            $('.image-row .col-md-12').html("<a href=''> <img src='images/tiger-1.png' alt=''>");
-                            
-                        }    
-                        else if(score > 10){
-                            $('#speedModal').modal('show');
-                            $("#speedModal div:first").addClass('modal-cheetah');
-                            $("#speedModal div:first").removeClass('modal-turtle');
-                            $("#speedModal div:first").removeClass('modal-octopus');
-                            $("#speedModal div:first").removeClass('modal-rabbit');
-                            $("#main-img").attr('src','images/cheetah.png');
-                            $('#ani-name').text('Cheetah!');
-                            $('.cscore').text(score);
-                            $('.times').text(clicks+' Clicks in 5 Seconds');
-                            $('#cen-text').text('“Your fingers snap at blistering speed just like the speedie cat runs. Hail to the king of clicking.”');
-                            $('.image-row .col-md-12').html("<a href=''> <img src='images/king.png' alt=''>");
-                            
-                        }
-                     var twscore = document.getElementById('tws'); //or grab it by tagname etc
-                     twscore.href = "https://twitter.com/intent/tweet/?text=Yay...My CPS test score is "+score+" i,e. I can click "+clicks+" times in 5 Seconds. Do you think you can you beat it? Try now.;url=https%3A%2F%2Fclickspeedtest.com%2F;hashtags=ClickSpeedTest,CPSChallenge"
-                     
-                     var rdscore = document.getElementById('rds');
-                     rdscore.href = "https://reddit.com/submit/?url=https%3A%2F%2Fclickspeedtest.com%2F&resubmit=true&title=How%20fast%20can%20you%20click%20in%205%20seconds%3F%20%20Challenge%20Yourself."
-                    
-                     var wascore = document.getElementById('was'); 
-                     wascore.href = " whatsapp://send?text=Woohoo...My CPS test score is "+score+" i,e. I can click "+clicks+" times in 5 Seconds. Do you think you can you beat it? Try now at https://clickspeedtest.com"
-                    
-                     var tlscore = document.getElementById('tls'); 
-                     var tlsref = "https://telegram.me/share/url?url=https%3A%2F%2Fclickspeedtest.com&text=Woohoo...My CPS test score is "+score+" i,e. I can click "+clicks+" times in 5 Seconds. Do you think you can you beat it? Try now."
-                     tlscore.href = tlsref;
-                    
-                     return;
+                    document.getElementById("button1").innerHTML = 'Click Here to start playing';
                 }
                 var t = (start - $.now()) / 1000
                 $('#countdown').html(Math.abs(t));
