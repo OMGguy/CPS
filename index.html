@@ -23,7 +23,7 @@
   text-align: center; 
     font-size: 20px;
    }
-   button{
+   #button{
    height: 256px;
   line-height: 80px;  
   width: 256px;  
@@ -40,9 +40,8 @@
  <h1>Clicks Per Second Tester</h1>
  <p id="mainpara">Click the Button as fast as you can!</p>
  <button type="submit" id="button1">CLICK ME!</button>
- <p id="nothingHere">Clicks</p><p id="Clik">0</p>
  <p id="nothingHere">CPS</p><p id="CPS">0</p>
-  <button type="submit">Reset</button>
+  <button id="button" type="submit">Reset</button>
  </body>
  <script>
  $(function () {
@@ -66,9 +65,9 @@
 
             $( "#reset" ).click(function() {
                 if(!active){
-                    $('#reset').hide();
-                    $('#clicker').show();
-                    $('.progress').show();
+                    $('#button').hide();
+                    $('#button1').show();
+                    $('CPS').show();
                     clicks = 0;
                     $('#clicks').html(clicks);
                     clearInterval(countdown);
